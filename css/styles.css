@@ -191,8 +191,22 @@ button {
 .menu-nav:focus {
   color: var(--accent-hoverfa-color);
 }
+
 .studio-after {
+  position: relative;
+  padding-top: 24px;
+  padding-bottom: 28px;
   color: var(--accent-hoverfa-color);
+}
+.studio-after::after {
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  background-color: currentColor;
+  border-radius: 2px;
 }
 
 /*=================================ADDRESS==============================*/
@@ -288,22 +302,28 @@ button {
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
+  padding: 20px 0;
   background: rgba(0, 0, 0, 0.5);
+  transition: opacity 250ms, visibility 250ms;
 }
 
 .modal-window {
   position: relative;
-  width: 408px;
-  height: 576px;
-  left: 50%;
-  top: 50%;
-  background: #fcfcfc;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 408px;
+  max-height: 576px;
+  background-color: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transform: translate(-50%, -50%);
+  transition: transform 250ms;
 }
 
 .close-button {
@@ -313,7 +333,7 @@ button {
   height: 24px;
   left: 360px;
   top: 24px;
-  background: #e7e9fc;
+  background-color: var(--additional-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -323,6 +343,7 @@ button {
 .close-button:hover {
   background-color: var(--accent-hoverfa-color);
   color: var(--phon-white-color);
+  box-shadow: none;
 }
 
 .is-hidden {
@@ -564,6 +585,7 @@ button {
   padding: 32px 16px;
 }
 .images-subject {
+  width: 290px;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
@@ -571,6 +593,26 @@ button {
 }
 .images-text {
   color: var(--main-color);
+}
+.description:hover .subject-text-description {
+  transform: translateY(0);
+}
+.subject-images-description {
+  position: relative;
+  overflow: hidden;
+}
+.subject-text-description {
+  position: absolute;
+  padding: 40px 32px 164px 32px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--ocean-color);
+  color: var(--phon-special-color);
+  transform: translateY(100%);
+  transition: transform 250ms;
 }
 
 /* FOOTER IN STUDIO */
