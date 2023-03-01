@@ -313,7 +313,7 @@ button {
 }
 
 .modal-window {
-  position: relative;
+  display: flex;
   overflow: auto;
   width: 100%;
   height: 100%;
@@ -354,6 +354,9 @@ button {
 
 .no-scroll {
   overflow: hidden;
+}
+.modal-icon {
+  justify-content: center;
 }
 
 /*=====================================SECTION2==============================*/
